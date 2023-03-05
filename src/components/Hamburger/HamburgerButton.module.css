@@ -1,0 +1,27 @@
+.hamburger-menu {
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.line {
+  display: block;
+  width: 35px;
+  height: 3px;
+  margin: 0.25rem auto;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.is-active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.is-active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}

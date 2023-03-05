@@ -1,0 +1,161 @@
+nav {
+  width: 90vw;
+  height: 4rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+header {
+  height: 4rem;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.logo-and-nav {
+  display: flex;
+  height: 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  width: 11rem;
+}
+
+.logo img {
+  width: 10rem;
+  height: 5rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cart-and-avatar {
+  display: flex;
+  width: 15rem;
+  align-items: center;
+  justify-content: end;
+}
+
+.cartIcon {
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.cart-drop-down {
+  position: absolute;
+  top: 4.5rem;
+  right: 0;
+}
+
+.avatar-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-size: cover;
+  margin-left: 2.7rem;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.avatar-icon:hover {
+  border: 2.5px solid hsl(26, 100%, 55%);
+}
+
+.badge {
+  width: 1rem;
+  height: 1rem;
+  background-color: hsl(26, 100%, 55%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+}
+
+.hamburger {
+  height: 4rem;
+  display: none;
+  align-items: center;
+  padding-bottom: 2rem;
+  margin-right: 2rem;
+  position: fixed;
+  z-index: 10;
+}
+
+@media (max-width: 875px) {
+  .cart-drop-down {
+    position: absolute;
+    z-index: 4;
+  }
+
+  .hamburger {
+    display: flex;
+    padding-bottom: 0.5rem;
+    margin-left: 0.9rem;
+  }
+
+  .logo {
+    margin-left: 4rem;
+  }
+}
+
+@media (max-width: 520px) {
+  nav {
+    width: 100vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+  }
+
+  header {
+    width: 100vw;
+    margin-top: 0;
+  }
+
+  .cart-and-avatar {
+    padding-top: 0.5rem;
+  }
+
+  .cart-drop-down {
+    position: absolute;
+    width: auto;
+    top: 4.5rem;
+    right: 1.8rem;
+  }
+
+  .hamburger {
+    padding: 0;
+    margin-top: 0.3rem;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .hamburger {
+    padding-bottom: 0.1rem;
+  }
+
+  .cart-drop-down {
+    left: 0;
+  }
+
+  .avatar-icon {
+    margin-left: 1.5rem;
+  }
+
+  .logo {
+    margin-left: 3rem;
+  }
+}

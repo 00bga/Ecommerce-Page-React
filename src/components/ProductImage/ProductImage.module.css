@@ -1,0 +1,158 @@
+.product-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  border-radius: 12px;
+}
+
+.main-image {
+  width: 100vw;
+  height: 23rem;
+  position: relative;
+}
+
+.image-main {
+  width: 31rem;
+  height: 31rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.thumbnails img {
+  cursor: pointer;
+  width: 7rem;
+  height: 7rem;
+  margin-right: 1rem;
+  transition: all 0.3s;
+}
+
+.thumbnails img:hover {
+  opacity: 0.5;
+  scale: 1.15;
+}
+
+.thumbnails img:last-child {
+  margin-right: 0;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  width: 25rem;
+}
+
+.next {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 4%;
+  bottom: 50%;
+  transform: translateY(50%);
+  cursor: pointer;
+  z-index: 4;
+  display: none;
+}
+
+.next svg {
+  stroke: #1d2026;
+  transition: all 0.15s;
+}
+
+.next:hover svg {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.previous {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 4%;
+  bottom: 50%;
+  transform: translateY(50%);
+  cursor: pointer;
+  z-index: 4;
+  display: none;
+}
+
+.previous svg {
+  stroke: #1d2026;
+  transition: all 0.15s;
+}
+
+.previous:hover svg {
+  stroke: hsl(26, 100%, 55%);
+}
+
+@media (max-width: 1540px) {
+  .image-main {
+    width: 23rem;
+    height: 23rem;
+  }
+
+  .thumbnails img {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .image-main {
+    width: 17rem;
+    height: 17rem;
+  }
+
+  .thumbnails img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 875px) {
+  .image-main {
+    margin-top: 2rem;
+    width: 23rem;
+    height: 23rem;
+    z-index: 3;
+  }
+
+  .thumbnails img {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .image-main {
+    width: 100vw;
+    border-radius: 0;
+    margin-top: 0;
+    cursor: auto;
+  }
+
+  .image-main img {
+    pointer-events: none;
+  }
+  
+  .next {
+    display: flex;
+  }
+
+  .previous {
+    display: flex;
+  }
+}

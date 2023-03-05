@@ -1,0 +1,48 @@
+.navigation-buttons {
+  width: 25rem;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 2rem;
+}
+
+.navigation-button {
+  position: relative;
+  height: 4rem;
+  color: #808080;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.navigation-button::before,
+.navigation-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 6px;
+  background-color: hsl(26, 100%, 55%);
+  transition: all 0.2s;
+}
+
+.navigation-button::before {
+  left: 50%;
+}
+
+.navigation-button::after {
+  right: 50%;
+}
+
+.navigation-button:hover::before,
+.navigation-button:hover::after {
+  width: 50%;
+}
+
+@media (max-width: 875px) {
+  .navigation-buttons {
+    display: none;
+  }
+}

@@ -1,0 +1,168 @@
+.product-description__position {
+  display: flex;
+  justify-content: center;
+}
+
+.product-description {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h5 {
+  color: hsl(26, 100%, 55%);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  color: grey;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 23rem;
+}
+
+.price {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.old-price {
+  margin-bottom: 3rem;
+}
+
+.sale {
+  color: hsl(26, 100%, 55%);
+  background-color: hsl(25, 100%, 94%);
+  width: 3rem;
+  text-align: center;
+  margin-left: 1rem;
+  border-radius: 12px;
+  font-weight: bolder;
+}
+
+.old-price {
+  text-decoration: line-through;
+}
+
+@media (max-width: 1540px) {
+  .thumbnails img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  h5 {
+    color: hsl(26, 100%, 55%);
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: grey;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    width: 23rem;
+  }
+
+  .old-price {
+    margin-bottom: 1rem;
+  }
+
+  .product-description {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  h5 {
+    color: hsl(26, 100%, 55%);
+    text-transform: uppercase;
+    font-size: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: grey;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    width: 23rem;
+  }
+
+  .price {
+    margin-top: 1rem;
+  }
+
+  .old-price {
+    margin-bottom: 0.5rem;
+  }
+
+  .product-description {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 875px) {
+  h5 {
+    color: hsl(26, 100%, 55%);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: grey;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    width: 23rem;
+  }
+
+  .price {
+    margin-top: 1rem;
+  }
+
+  .old-price {
+    margin-bottom: 0.5rem;
+  }
+
+  .product-description {
+    height: 28rem;
+    margin-top: 2rem;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 430px) {
+  .product-description {
+    width: 90vw;
+  }
+
+  .description-text {
+    width: 100%;
+  }
+}

@@ -1,0 +1,119 @@
+.product-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+img {
+  border-radius: 12px;
+}
+
+.image-main {
+  width: 31rem;
+  height: 31rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.thumbnails img {
+  cursor: pointer;
+  width: 7rem;
+  height: 7rem;
+  margin-right: 1rem;
+  transition: all 0.3s;
+}
+
+.thumbnails img:hover {
+  opacity: 0.5;
+  scale: 1.15;
+}
+
+.thumbnails img:last-child {
+  margin-right: 0;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  width: 25rem;
+}
+
+.next {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 55%;
+  transform: translateX(50%);
+  cursor: pointer;
+  z-index: 7;
+}
+
+.next svg {
+  stroke: #1d2026;
+  transition: all 0.15s;
+}
+
+.next:hover svg {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.previous {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 55%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 7;
+}
+
+.previous svg {
+  stroke: #1d2026;
+  transition: all 0.15s;
+}
+
+.previous:hover svg {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -2rem;
+}
+
+.close svg {
+  fill: #fff;
+  transition: all 0.15s;
+}
+
+.close:hover svg {
+  fill: hsl(26, 100%, 55%);
+}
+
+@media (max-width: 1540px) {
+  .image-main {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .thumbnails img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+}
