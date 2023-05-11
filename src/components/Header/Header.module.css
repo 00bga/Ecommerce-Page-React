@@ -26,13 +26,13 @@ header {
 }
 
 .logo img {
-  width: 10rem;
-  height: 5rem;
+  width: 12rem;
+  height: 3rem;
   object-fit: contain;
   object-position: center;
 }
 
-.cart-and-avatar {
+.cart-and-language {
   display: flex;
   width: 15rem;
   align-items: center;
@@ -65,6 +65,27 @@ header {
   border: 2.5px solid hsl(26, 100%, 55%);
 }
 
+.language-changer {
+  width: 6.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 1.5rem;
+}
+
+.language-changer a {
+  transition: all 0.25s;
+}
+
+.language-changer a:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.selectedLanguage {
+  color: hsl(26, 100%, 55%);
+  border-bottom: 1px solid hsl(26, 100%, 55%);
+}
+
 .badge {
   width: 1rem;
   height: 1rem;
@@ -91,6 +112,17 @@ header {
 }
 
 @media (max-width: 875px) {
+  nav {
+    width: 100vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+  }
+
   .cart-drop-down {
     position: absolute;
     z-index: 4;
@@ -105,26 +137,13 @@ header {
   .logo {
     margin-left: 4rem;
   }
-}
-
-@media (max-width: 520px) {
-  nav {
-    width: 100vw;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    position: fixed;
-    top: 0;
-    z-index: 5;
-    background-color: #fff;
-  }
 
   header {
     width: 100vw;
     margin-top: 0;
   }
 
-  .cart-and-avatar {
+  .cart-and-language {
     padding-top: 0.5rem;
   }
 
@@ -137,7 +156,15 @@ header {
 
   .hamburger {
     padding: 0;
-    margin-top: 0.3rem;
+    margin-top: 0.6rem;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .hamburger {
+    padding: 0;
+    margin-top: 0.15rem;
     margin-left: 1rem;
   }
 }
@@ -157,5 +184,14 @@ header {
 
   .logo {
     margin-left: 3rem;
+  }
+
+  .logo img {
+    width: 10rem;
+  }
+
+  .language-changer {
+    width: 5.5rem;
+    margin-left: 0.6rem;
   }
 }

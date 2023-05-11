@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./App.module.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import ModalWindow from "./components/ModalWindow";
 import HamburgerMenu from "./components/Hamburger/HamburgerMenu";
+import { Route, Routes } from "react-router-dom";
+import Contact from "./pages/Contact";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [total, setTotal] = useState(0);
+  const [count, setCount] = useState(1);
+  const [total, setTotal] = useState(44.99);
   const [updatedCount, setUpdatedCount] = useState(0);
   const [updatedTotal, setUpdatedTotal] = useState(0);
   const [cartItem, setCartItem] = useState({});
@@ -17,6 +19,7 @@ function App() {
   const [focus, setFocus] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [hamburgerClicked, setHamburgerClicked] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleHamburgerClick = () => {
     setHamburgerClicked(!hamburgerClicked);
@@ -57,7 +60,10 @@ function App() {
       onClick={handleModalBackgroundClick}
     >
       <div className={styles.modal}>
-        <ModalWindow handleCloseModal={handleCloseModal} />
+        <ModalWindow
+          handleCloseModal={handleCloseModal}
+          initialIndex={selectedIndex}
+        />
       </div>
     </div>
   ) : (
@@ -78,11 +84,13 @@ function App() {
     setUpdatedTotal(0);
   };
 
+  const cartRef = useRef(null);
+
   return (
     <main
       onClick={(e) => {
-        if (dropDownOpen && e.target.closest(".Cart_cart__wijC3") === null) {
-          setDropDownOpen(!dropDownOpen);
+        if (dropDownOpen && !cartRef.current.contains(e.target)) {
+          setDropDownOpen(false);
           setCartColor(cartColor === "#C3CAD9" ? "black" : "#C3CAD9");
         }
       }}
@@ -105,21 +113,34 @@ function App() {
           isActive={isActive}
           handleClick={handleClick}
           handleHamburgerClick={handleHamburgerClick}
-        />
-        <Body
-          count={count}
-          setCount={setCount}
+          cartRef={cartRef}
           total={total}
-          setTotal={setTotal}
-          setCartItem={setCartItem}
-          badge={badge}
-          setBadge={setBadge}
-          updatedCount={updatedCount}
-          updatedTotal={updatedTotal}
-          setUpdatedCount={setUpdatedCount}
-          setUpdatedTotal={setUpdatedTotal}
-          handleFocus={handleFocus}
         />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Body
+                count={count}
+                setCount={setCount}
+                total={total}
+                setTotal={setTotal}
+                setCartItem={setCartItem}
+                badge={badge}
+                setBadge={setBadge}
+                updatedCount={updatedCount}
+                updatedTotal={updatedTotal}
+                setUpdatedCount={setUpdatedCount}
+                setUpdatedTotal={setUpdatedTotal}
+                handleFocus={handleFocus}
+                toggleDropDownHandler={toggleDropDownHandler}
+                selectedIndex={selectedIndex}
+                setSelectedIndex={setSelectedIndex}
+              />
+            }
+          />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </main>
   );

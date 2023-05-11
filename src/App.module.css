@@ -42,7 +42,7 @@ main {
   }
 
   .main-card {
-    height: 100vh;
+    height: 100svh;
   }
 }
 

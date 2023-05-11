@@ -9,7 +9,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Kumbh Sans", sans-serif;
 }
 
 html,
@@ -22,4 +21,5 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "FiraGO", sans-serif;
 }

@@ -42,7 +42,12 @@
   justify-content: space-around;
   margin-left: 1rem;
   margin-top: 5rem;
-  height: 17rem;
+  height: 5rem;
+}
+
+.navigation-buttons__hamburger:last-child {
+  margin-top: 0;
+  height: 2rem;
 }
 
 .navigation-button__hamburger {

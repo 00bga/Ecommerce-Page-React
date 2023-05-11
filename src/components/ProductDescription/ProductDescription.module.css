@@ -4,22 +4,17 @@
 }
 
 .product-description {
-  width: 25rem;
+  width: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 h5 {
-  color: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 0%);
   text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-h2 {
-  font-size: 3rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -38,6 +33,7 @@ p {
 
 .old-price {
   margin-bottom: 3rem;
+  text-decoration: line-through;
 }
 
 .sale {
@@ -50,8 +46,61 @@ p {
   font-weight: bolder;
 }
 
-.old-price {
-  text-decoration: line-through;
+.product-attributes {
+  width: 22rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.product-attributes select {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 240);
+  transition: all 0.2s;
+}
+
+.product-attributes select:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: #f6f6f6;
+  border-radius: 10px;
+}
+
+.select-size {
+  width: 100%;
+  height: 100%;
+  padding: 5px 15px;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  color: #000;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid hsl(26, 100%, 55%);
+  pointer-events: none;
 }
 
 @media (max-width: 1540px) {
@@ -61,15 +110,9 @@ p {
   }
 
   h5 {
-    color: hsl(26, 100%, 55%);
+    color: hsl(0, 0%, 0%);
     text-transform: uppercase;
-    font-size: 0.6rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
   }
 
   p {
@@ -84,21 +127,19 @@ p {
   }
 
   .product-description {
-    width: 20rem;
+    width: 27rem;
   }
 }
 
 @media (max-width: 1000px) {
   h5 {
-    color: hsl(26, 100%, 55%);
+    color: hsl(0, 0%, 0%);
     text-transform: uppercase;
-    font-size: 0.5rem;
+    font-size: 0.9rem;
   }
 
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  h3 {
+    font-size: 1rem;
   }
 
   p {
@@ -113,7 +154,7 @@ p {
   }
 
   .old-price {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
   }
 
   .product-description {
@@ -123,15 +164,9 @@ p {
 
 @media (max-width: 875px) {
   h5 {
-    color: hsl(26, 100%, 55%);
+    color: hsl(0, 0%, 0%);
     text-transform: uppercase;
-    font-size: 0.7rem;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
   }
 
   p {
@@ -164,5 +199,13 @@ p {
 
   .description-text {
     width: 100%;
+  }
+
+  .product-attributes {
+    width: 20.8rem;
+  }
+
+  .product-attributes select {
+    width: 9.5rem;
   }
 }

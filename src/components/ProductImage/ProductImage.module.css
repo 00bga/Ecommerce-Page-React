@@ -11,7 +11,7 @@ img {
 }
 
 .main-image {
-  width: 100vw;
+  width: 100%;
   height: 23rem;
   position: relative;
 }
@@ -20,8 +20,36 @@ img {
   width: 31rem;
   height: 31rem;
   margin-bottom: 1rem;
-  cursor: pointer;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.thumbnails-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnails {
+  display: flex;
+  width: calc(7rem * 4 + 1rem * 3);
+  overflow: hidden;
+}
+
+.image-container {
+  display: flex;
+  width: 1300%;
+  transition: transform 0.25s ease-in-out;
+}
+
+.thumbnails-container {
+  display: flex;
+  width: calc(8rem * 13);
+  transition: transform 0.25s ease-in-out;
 }
 
 .thumbnails img {
@@ -34,17 +62,34 @@ img {
 
 .thumbnails img:hover {
   opacity: 0.5;
-  scale: 1.15;
 }
 
-.thumbnails img:last-child {
+.thumbnails-container img:last-child {
   margin-right: 0;
 }
 
-.thumbnails {
+.thumbnailArrowLeft,
+.thumbnailArrowRight {
+  width: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: center;
-  width: 25rem;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+.thumbnailArrowLeft svg,
+.thumbnailArrowRight svg {
+  stroke: #1d2026;
+  transition: all 0.15s;
+}
+
+.thumbnailArrowLeft:hover svg,
+.thumbnailArrowRight:hover svg {
+  stroke: hsl(26, 100%, 55%);
 }
 
 .next {
@@ -101,8 +146,12 @@ img {
 
 @media (max-width: 1540px) {
   .image-main {
-    width: 23rem;
-    height: 23rem;
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .thumbnails-wrapper {
+    width: 32rem;
   }
 
   .thumbnails img {
@@ -111,27 +160,27 @@ img {
   }
 }
 
-@media (max-width: 1000px) {
-  .image-main {
-    width: 17rem;
-    height: 17rem;
-  }
-
-  .thumbnails img {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-}
-
 @media (max-width: 875px) {
   .image-main {
-    margin-top: 2rem;
     width: 23rem;
     height: 23rem;
     z-index: 3;
   }
 
   .thumbnails img {
+    display: none;
+  }
+
+  .next {
+    display: none;
+  }
+
+  .previous {
+    display: none;
+  }
+
+  .thumbnailArrowLeft,
+  .thumbnailArrowRight {
     display: none;
   }
 }
@@ -147,12 +196,17 @@ img {
   .image-main img {
     pointer-events: none;
   }
-  
+
   .next {
-    display: flex;
+    display: none;
   }
 
   .previous {
-    display: flex;
+    display: none;
+  }
+
+  .thumbnailArrowLeft,
+  .thumbnailArrowRight {
+    display: none;
   }
 }

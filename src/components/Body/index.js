@@ -7,7 +7,11 @@ function Body(props) {
   return (
     <div className={styles["product-position"]}>
       <div className={styles.product}>
-        <ProductImage handleFocus={props.handleFocus} />
+        <ProductImage
+          handleFocus={props.handleFocus}
+          selectedIndex={props.selectedIndex}
+          setSelectedIndex={props.setSelectedIndex}
+        />
         <ProductDescription
           setCartItem={props.setCartItem}
           count={props.count}
@@ -19,6 +23,7 @@ function Body(props) {
           updatedTotal={props.updatedTotal}
           setUpdatedCount={props.setUpdatedCount}
           setUpdatedTotal={props.setUpdatedTotal}
+          toggleDropDownHandler={props.toggleDropDownHandler}
         />
       </div>
     </div>

@@ -1,5 +1,4 @@
 .navigation-buttons {
-  width: 25rem;
   display: flex;
   justify-content: space-around;
   margin-left: 2rem;
@@ -37,7 +36,9 @@
 }
 
 .navigation-button:hover::before,
-.navigation-button:hover::after {
+.navigation-button:hover::after,
+.navigation-button.active::before,
+.navigation-button.active::after {
   width: 50%;
 }
 

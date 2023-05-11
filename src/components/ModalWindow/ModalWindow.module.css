@@ -10,34 +10,25 @@ img {
   border-radius: 12px;
 }
 
-.image-main {
-  width: 31rem;
-  height: 31rem;
-  margin-bottom: 1rem;
+.main-image {
+  width: 100%;
+  height: 23rem;
   position: relative;
 }
 
-.thumbnails img {
-  cursor: pointer;
-  width: 7rem;
-  height: 7rem;
-  margin-right: 1rem;
-  transition: all 0.3s;
+.image-main {
+  width: 40rem;
+  height: 40rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.thumbnails img:hover {
-  opacity: 0.5;
-  scale: 1.15;
-}
-
-.thumbnails img:last-child {
-  margin-right: 0;
-}
-
-.thumbnails {
+.image-container {
   display: flex;
-  justify-content: center;
-  width: 25rem;
+  width: 1300%;
+  transition: transform 0.25s ease-in-out;
 }
 
 .next {
@@ -49,9 +40,9 @@ img {
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
-  right: 0;
-  bottom: 55%;
-  transform: translateX(50%);
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(50%);
   cursor: pointer;
   z-index: 7;
 }
@@ -74,9 +65,9 @@ img {
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
-  left: 0;
-  bottom: 55%;
-  transform: translateX(-50%);
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
   cursor: pointer;
   z-index: 7;
 }
@@ -108,12 +99,24 @@ img {
 
 @media (max-width: 1540px) {
   .image-main {
-    width: 25rem;
-    height: 25rem;
+    width: 35rem;
+    height: 35rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .image-main {
+    width: 17rem;
+    height: 17rem;
   }
 
-  .thumbnails img {
-    width: 5.5rem;
-    height: 5.5rem;
+  .next {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .previous {
+    width: 2rem;
+    height: 2rem;
   }
 }
